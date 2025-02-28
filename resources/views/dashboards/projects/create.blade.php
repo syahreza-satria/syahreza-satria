@@ -56,10 +56,14 @@
                 <p class="text-sm text-red-500">{{ $message }}</p>
             @enderror
 
-            <button type="submit"
-                class="w-full p-2 text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">
-                Add Project
-            </button>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="{{ route('dashboard.projects.index') }}"
+                    class="p-2 text-center text-white transition duration-300 bg-gray-500 hover:bg-gray-400 rounded-xl">Cancel</a>
+                <button type="submit"
+                    class="p-2 text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">
+                    Add Project
+                </button>
+            </div>
         </form>
     </div>
 @endsection

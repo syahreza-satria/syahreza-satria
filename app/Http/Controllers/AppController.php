@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,10 +28,13 @@ class AppController extends Controller
         return response()->download($filePath, $fileName);
     }
 
-    public function project()
+    public function project(Request $request)
     {
-        $projects = Project::latest()->take(3)->get();
-        return view('project', compact('projects'));
+        $categories = Category::all(); // Ambil semua kategori
+        $projects = Project::when($request->category_id, function ($query) use ($request) {
+            return $query->where('category_id', $request->category_id);
+        })->get();
+        return view('project', compact('projects', 'categories'));
     }
 
     public function about()

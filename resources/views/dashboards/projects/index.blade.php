@@ -19,7 +19,10 @@
                     <img src="{{ asset($project->image) }}" alt="{{ $project->title }}"
                         class="object-cover aspect-video rounded-t-xl">
                     <div class="p-4">
-                        <h2 class="mb-1 text-lg font-semibold">{{ $project->title }}</h2>
+                        <div class="flex items-center justify-between mb-1">
+                            <h2 class="text-lg font-semibold">{{ $project->title }}</h2>
+                            <h3 class="text-sm text-sky-500">{{ $project->category->name }}</h3>
+                        </div>
                         <p class="mb-4 text-sm text-gray-500">
                             {{ $project->description }}
                         </p>
@@ -46,7 +49,6 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </button>
-
                             </form>
                         </div>
                     </div>

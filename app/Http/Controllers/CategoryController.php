@@ -30,29 +30,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'category_id' => 'required|integer',
-            'url' => 'nullable|url', // Validasi untuk URL jika diperlukan
-            'image' => 'nullable|file|image|max:2048',
+            'name' => 'required|string|max:255',
         ]);
 
         // Buat instance baru Project
-        $project = new Category();
-        $project->title = $request->title;
-        $project->description = $request->description;
-        $project->category_id = $request->category_id;
-        $project->url = $request->url;
+        $categories = new Category();
+        $categories->name = $request->name;
 
-        // Proses Upload File jika ada
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('projects', 'public');
-            $project->image = $imagePath;
-        }
+        $categories->save(); // Simpan ke database
 
-        $project->save(); // Simpan ke database
-
-        return redirect()->route('dashboard.projects.index')->with('success', 'Project created successfully');
+        return redirect()->route('dashboard.categories.index')->with('success', 'categories created successfully');
     }
 
     /**
@@ -82,8 +69,13 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id); // Cari produk berdasarkan ID
+
+        // Hapus produk dari database
+        $category->delete();
+
+        return redirect()->route('dashboard.categories.index');
     }
 }
