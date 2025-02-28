@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard 🧑‍💻</title>
     @vite('resources/css/app.css')
+    <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon">
+
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

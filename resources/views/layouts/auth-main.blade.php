@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syahreza Satria Alfath | Login</title>
     @vite('resources/css/app.css')
+    <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon">
+
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
