@@ -27,7 +27,29 @@ class DatabaseSeeder extends Seeder
             'name' => 'Photography',
         ]);
 
-        Project::factory()->create();
+        Project::factory()->create([
+            'title' => fake()->sentence(3),
+            'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory()->create()->id, // Ambil atau buat kategori
+            'description' => fake()->paragraph(),
+            'image' => fake()->imageUrl(),
+            'url' => fake()->url(),
+        ]);
+
+        Project::factory()->create([
+            'title' => fake()->sentence(3),
+            'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory()->create()->id, // Ambil atau buat kategori
+            'description' => fake()->paragraph(),
+            'image' => fake()->imageUrl(),
+            'url' => fake()->url(),
+        ]);
+
+        Project::factory()->create([
+            'title' => fake()->sentence(3),
+            'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory()->create()->id, // Ambil atau buat kategori
+            'description' => fake()->paragraph(),
+            'image' => fake()->imageUrl(),
+            'url' => fake()->url(),
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

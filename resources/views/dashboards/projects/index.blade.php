@@ -1,24 +1,25 @@
 @extends('dashboards.layouts.dashboard')
 
 @section('content')
-    <div class="flex justify-between mb-8">
+    <div class="flex justify-between px-8 py-4 mb-8 bg-white border rounded-2xl">
         <h1 class="text-2xl font-bold">Daftar Projects</h1>
         <a href="{{ route('dashboard.projects.create') }}"
-            class="flex items-center gap-2 px-4 py-2 text-sm text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">Tambah
-            Projects <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            class="flex items-center gap-2 px-4 py-2 text-sm text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl"><span
+                class="hidden sm:block">Tambah
+                Projects</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-5">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
         </a>
     </div>
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         @if ($projects->isNotEmpty())
             @foreach ($projects as $project)
-                <div class="bg-white shadow rounded-xl">
+                <div class="flex flex-col h-full transition duration-300 bg-white shadow rounded-xl hover:shadow-xl">
                     <img src="{{ asset($project->image) }}" alt="{{ $project->title }}"
                         class="object-cover aspect-video rounded-t-xl">
-                    <div class="p-4">
+                    <div class="flex flex-col flex-grow p-4">
                         <div class="flex items-center justify-between mb-1">
                             <h2 class="text-lg font-semibold">{{ $project->title }}</h2>
                             <h3 class="text-sm text-sky-500">{{ $project->category->name }}</h3>
@@ -26,7 +27,8 @@
                         <p class="mb-4 text-sm text-gray-500">
                             {{ $project->description }}
                         </p>
-                        <div class="flex justify-end gap-2">
+                        <!-- Spacer untuk mendorong tombol ke bawah -->
+                        <div class="flex justify-end gap-2 mt-auto">
                             <a href="{{ route('dashboard.projects.edit', $project->id) }}"
                                 class="p-2 text-white transition duration-300 bg-yellow-500 rounded-lg hover:bg-yellow-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -55,9 +57,10 @@
                 </div>
             @endforeach
         @else
-            <div class="py-16 text-center text-gray-500 bg-white border shadow col-span-full rounded-2xl">Belum ada Project
-                masuk disini
+            <div class="py-16 text-center text-gray-500 bg-white border shadow col-span-full rounded-2xl">
+                Belum ada Project masuk disini
             </div>
         @endif
     </div>
+
 @endsection

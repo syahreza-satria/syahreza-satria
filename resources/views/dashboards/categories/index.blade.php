@@ -4,7 +4,7 @@
     @extends('dashboards.layouts.dashboard')
 
 @section('content')
-    <div class="flex justify-between mb-8">
+    <div class="flex justify-between px-8 py-4 mb-8 bg-white border rounded-2xl">
         <h1 class="text-2xl font-bold">Daftar Kategori</h1>
         <a href="{{ route('dashboard.categories.create') }}"
             class="flex items-center gap-2 px-4 py-2 text-sm text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">Tambah
@@ -15,7 +15,7 @@
             </svg>
         </a>
     </div>
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid gap-2 sm:grid-cols-3 md:grid-cols-5">
         @if ($categories->isNotEmpty())
             @foreach ($categories as $category)
                 <div x-data="{ showButtons: false }" @mouseenter="showButtons = true" @mouseleave="showButtons = false"

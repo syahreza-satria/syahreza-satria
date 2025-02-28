@@ -26,7 +26,7 @@
         @include('dashboards.partials.sidebar')
 
         {{-- Content --}}
-        <div class="col-span-9">
+        <div class="md:col-span-9 col-span-full">
             {{-- Top Bar --}}
             @include('dashboards.partials.topbar')
 
@@ -36,6 +36,23 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById("preview");
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove("hidden"); // Tampilkan jika sebelumnya tersembunyi
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
 </body>
 
 </html>

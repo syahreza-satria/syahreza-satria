@@ -1,4 +1,4 @@
-<div class="min-h-screen col-span-3 p-8 bg-white border-r">
+<div class="hidden min-h-screen col-span-3 p-8 bg-white border-r md:block">
     <a href="{{ route('dashboard.index') }}" class="block mb-8 text-2xl font-semibold">Dashboard</a>
     <p class="mb-4 text-sm font-medium text-gray-500">MENU</p>
     <div class="flex flex-col gap-4 mb-8 font-semibold text-gray-600">

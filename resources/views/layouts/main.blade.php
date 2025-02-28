@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
 
+    {{-- animate --}}
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </head>
 
 <body class="font-primary text-slate-700">
@@ -28,6 +30,28 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        var app = document.getElementById('app');
+
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+
+        typewriter.typeString('Hello World!')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('Halo Dunia!')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('こんにちは世界!')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('안녕하세요 세상!')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('Привет, мир!')
+            .start();
+    </script>
 </body>
 
 </html>

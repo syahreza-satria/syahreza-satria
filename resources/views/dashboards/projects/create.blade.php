@@ -16,52 +16,76 @@
 
         <form action="{{ route('dashboard.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="space-y-4">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 ">
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                        <input type="text" name="title" id="title"
+                            class="block w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500">
+                        @error('title')
+                            <p class="text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                        <select name="category_id" id="category"
+                            class="block w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500">
+                            <option value="" disabled selected>-Choose Categories-</option>
 
-            <label for="title">Title</label>
-            <input type="text" name="title" value="{{ old('title') }}"
-                class="w-full p-2 mb-4 border border-gray-300 rounded-xl">
-            @error('title')
-                <p class="text-sm text-red-500">{{ $message }}</p>
-            @enderror
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('category_id')
+                            <p class="text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
 
-            <label for="description">Description</label>
-            <textarea name="description" class="w-full p-2 mb-4 border border-gray-300 rounded-xl">{{ old('description') }}</textarea>
-            @error('description')
-                <p class="text-sm text-red-500">{{ $message }}</p>
-            @enderror
+                <div>
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea name="description" id="description" rows="3"
+                        class="block w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></textarea>
+                    @error('description')
+                        <p class="text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
 
-            <label for="image">Image</label>
-            <input type="file" name="image" class="w-full p-2 mb-4 border border-gray-300 rounded-xl">
-            @error('image')
-                <p class="text-sm text-red-500">{{ $message }}</p>
-            @enderror
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                        <input type="file" name="image" id="image" accept="image/*"
+                            class="block w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500 file:hidden"
+                            onchange="previewImage(event)">
 
-            <label for="category_id">Category</label>
-            <select name="category_id" class="w-full p-2 mb-4 border border-gray-300 rounded-xl">
-                <option value="" disabled selected>- Choose Category -</option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                        {{ $category->name }}
-                    </option>
-                @endforeach
-            </select>
-            @error('category_id')
-                <p class="text-sm text-red-500">{{ $message }}</p>
-            @enderror
+                        <!-- Gambar preview (default kosong & tersembunyi) -->
+                        <img id="preview" class="hidden object-cover w-auto h-32 mt-3 rounded-lg" src=""
+                            alt="Preview">
 
-            <label for="url">URL</label>
-            <input type="text" name="url" value="{{ old('url') }}"
-                class="w-full p-2 mb-4 border border-gray-300 rounded-xl">
-            @error('url')
-                <p class="text-sm text-red-500">{{ $message }}</p>
-            @enderror
+                        @error('image')
+                            <p class="text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="url" class="block text-sm font-medium text-gray-700">URL</label>
+                        <input type="text" name="url" id="url"
+                            class="block w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500">
+                        @error('url')
+                            <p class="text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-2 mt-4">
                 <a href="{{ route('dashboard.projects.index') }}"
-                    class="p-2 text-center text-white transition duration-300 bg-gray-500 hover:bg-gray-400 rounded-xl">Cancel</a>
+                    class="px-4 py-2 text-sm text-white transition duration-300 bg-gray-500 hover:bg-gray-400 rounded-xl">Cancel</a>
                 <button type="submit"
-                    class="p-2 text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">
-                    Add Project
+                    class="px-4 py-2 text-sm text-white transition duration-300 bg-sky-500 hover:bg-sky-400 rounded-xl">
+                    Update Project
                 </button>
             </div>
         </form>

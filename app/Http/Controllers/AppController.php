@@ -12,7 +12,7 @@ class AppController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest()->take(3)->get();
+        $projects = Project::latest()->take(2)->get();
         return view('index', compact('projects'));
     }
 
@@ -33,7 +33,7 @@ class AppController extends Controller
         $categories = Category::all(); // Ambil semua kategori
         $projects = Project::when($request->category_id, function ($query) use ($request) {
             return $query->where('category_id', $request->category_id);
-        })->get();
+        })->latest()->get();
         return view('project', compact('projects', 'categories'));
     }
 

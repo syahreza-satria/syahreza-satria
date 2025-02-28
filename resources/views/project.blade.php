@@ -19,7 +19,7 @@
     <div class="grid justify-between grid-cols-1 gap-6 md:grid-cols-2">
         @if ($projects->isNotEmpty())
             @foreach ($projects as $project)
-                <a href="{{ $project->url }}" class="transition duration-500 hover:shadow rounded-xl">
+                <a href="{{ $project->url }}" class="transition duration-500 shadow hover:shadow-xl rounded-xl">
                     <img src="{{ $project->image }}" alt="{{ $project->title }}"
                         class="object-cover rounded-xl aspect-video">
                     <div class="p-3">

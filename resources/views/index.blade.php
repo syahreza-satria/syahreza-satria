@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <p class="mb-4">Hello World 👋, My Name Is...</p>
+    <p class="mb-4"><span id="app">Hello World</span> 👋, My Name Is...</p>
     <div class="mb-8">
         <h1 class="text-3xl font-bold text-black font-secondary md:text-6xl">SYAHREZA SATRIA</h1>
         <p class="font-secondary">
@@ -32,18 +32,19 @@
 
     <!-- Project -->
     <div class="mb-8">
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between px-6 py-2 mb-4 bg-white shadow-lg rounded-xl">
             <h2 class="text-xl font-bold text-black">Latest Projects</h2>
-            <a href="#" class="text-sm transition duration-500 text-sky-500 hover:text-sky-700">View All</a>
+            <a href="{{ route('project') }}" class="text-sm transition duration-500 text-sky-500 hover:text-sky-700">View
+                All</a>
         </div>
-        <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             @if ($projects->isNotEmpty())
                 @foreach ($projects as $project)
-                    <a href="{{ $project->url }}" class="flex flex-col rounded-xl">
+                    <a href="{{ $project->url }}" class="flex flex-col transition duration-300 rounded-xl hover:shadow-md">
                         <img src="{{ $project->image }}" alt="{{ $project->title }}"
                             class="object-cover w-full aspect-video rounded-xl">
-                        <div class="pt-3">
-                            <h3 class="mb-1 text-base font-semibold">{{ $project->title }}</h3>
+                        <div class="p-3">
+                            <h3 class="mb-1 text-base font-semibold font-secondary">{{ $project->title }}</h3>
                             <p class="text-xs text-slate-400">
                                 {{ $project->description }}
                             </p>
