@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syahreza Satria Alfath | Login</title>
     @vite('resources/css/app.css')
-    <title>Syahreza Satria Alfath</title>
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -17,12 +17,12 @@
 
 </head>
 
-<body class="font-primary text-slate-700">
+<body class="bg-gray-100 font-primary">
     {{-- Navbar --}}
-    @include('includes.navbar')
+    @include('includes.navbar-auth')
 
     {{-- Content --}}
-    <section class="max-w-2xl px-4 py-8 mx-auto">
+    <section class="max-w-2xl mx-auto">
         @yield('content')
     </section>
 

@@ -23,30 +23,30 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'category_id' => 'required|integer',
-            'image' => 'required|file|image|max:2048',
-            'url' => 'nullable|url',
+            'url' => 'nullable|url', // Validasi untuk URL jika diperlukan
+            'image' => 'nullable|file|image|max:2048',
         ]);
 
-        $imagePath = null;
+        // Buat instance baru Project
+        $project = new Project();
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->category_id = $request->category_id;
+        $project->url = $request->url;
+
+        // Proses Upload File jika ada
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
+            $imagePath = $request->file('image')->store('projects', 'public');
+            $project->image = $imagePath;
         }
 
-        $project = Project::create([
-            'name' => $request->name,
-            'category_id' => $request->category_id,
-            'description' => $request->description,
-            'price' => $request->price,
-            'image' => $imagePath,
-            'url' => $request->url,
-        ]);
+        $project->save(); // Simpan ke database
 
-        return redirect()->route('dashboard.projects.index');
+        return redirect()->route('dashboard.projects.index')->with('success', 'Project created successfully');
     }
 
     public function show($id)

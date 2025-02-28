@@ -5,8 +5,10 @@
     <div class="mb-8">
         <h1 class="text-3xl font-bold text-black font-secondary md:text-6xl">SYAHREZA SATRIA</h1>
         <p class="font-secondary">
-            <a href="#" class="transition duration-500 hover:text-sky-300 text-sky-500">Fullstack Web Developer</a>,
-            <a href="#" class="transition duration-500 hover:text-rose-300 text-rose-500">Content Creator</a>
+            <a href="https://github.com/syahreza-satria"
+                class="transition duration-500 hover:text-sky-300 text-sky-500">Fullstack Web Developer</a>,
+            <a href="https://www.youtube.com/@SyahrezaSatria"
+                class="transition duration-500 hover:text-rose-300 text-rose-500">Content Creator</a>
         </p>
     </div>
     <p class="mb-4 text-sm font-light leading-normal text-justify">
@@ -33,18 +35,23 @@
             <h2 class="text-xl font-bold text-black">Latest Projects</h2>
             <a href="#" class="text-sm transition duration-500 text-sky-500 hover:text-sky-700">View All</a>
         </div>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <a href="#" class="flex flex-col rounded-xl">
-                <img src="https://placehold.co/500x500" alt="Project Image"
-                    class="object-cover w-full aspect-video rounded-xl">
-                <div class="pt-3">
-                    <h3 class="mb-1 text-base font-semibold">Judul Proyek #1</h3>
-                    <p class="text-xs text-slate-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam iure eos est ullam modi
-                        laudantium repudiandae quas saepe voluptatibus?
-                    </p>
-                </div>
-            </a>
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+            @if ($projects->isNotEmpty())
+                @foreach ($projects as $project)
+                    <a href="{{ $project->url }}" class="flex flex-col rounded-xl">
+                        <img src="{{ $project->image }}" alt="{{ $project->title }}"
+                            class="object-cover w-full aspect-video rounded-xl">
+                        <div class="pt-3">
+                            <h3 class="mb-1 text-base font-semibold">{{ $project->title }}</h3>
+                            <p class="text-xs text-slate-400">
+                                {{ $project->description }}
+                            </p>
+                        </div>
+                    </a>
+                @endforeach
+            @else
+                <p class="py-24 text-center text-gray-500 col-span-full">Belum ada proyek yang tersedia.</p>
+            @endif
         </div>
     </div>
 @endsection

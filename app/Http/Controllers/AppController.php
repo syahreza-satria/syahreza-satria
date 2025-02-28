@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $projects = Project::latest()->take(3)->get();
+        return view('index', compact('projects'));
+    }
+
+    public function project()
+    {
+        $projects = Project::latest()->take(3)->get();
+        return view('project', compact('projects'));
     }
 
     public function about()
@@ -19,10 +27,5 @@ class AppController extends Controller
     public function contact()
     {
         return view('contact');
-    }
-
-    public function project()
-    {
-        return view('project');
     }
 }
