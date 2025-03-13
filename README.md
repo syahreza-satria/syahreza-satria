@@ -10,6 +10,7 @@
 
 ###
 
+<h2>About Me:</h2>
 <p align="left">Hello World! My name is Syahreza Satria Alfath, I am a Frontend Developer👨🏻‍💻 and Content Creator🎥 based in Indonesia 🇮🇩.<br><br>🎓 Achieved my Bachelor Degree in Information Technology from Telkom University.<br>📈 Currently upgrading my skills in Frontend ,Data Science and Cybersecurity<br>📩 Reach me on : Linkedin Or Gmail</p>
 
 ###
