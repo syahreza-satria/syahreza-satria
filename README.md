@@ -19,7 +19,7 @@ Hi, My name is Syahreza Satria Alfath. A 24 Year Old Web Developer & Content Cre
     <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" height="50">
     <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" height="50">
     <img src="https://cdn.worldvectorlogo.com/logos/javascript-r.svg" height="50">
-    <img src="https://cdn.worldvectorlogo.com/logos/php-4.svg" width="50" style="background: solid #ffffff; border-radius: 100%">
+    <img src="https://cdn.worldvectorlogo.com/logos/php-4.svg" width="50" style="background: #ffffff; border-radius: 100%">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png" height="50">
     <img src="https://www.svgrepo.com/show/374118/tailwind.svg" height="50">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1280px-Laravel.svg.png?20190820171151" height="50">
