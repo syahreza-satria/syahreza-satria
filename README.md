@@ -15,15 +15,18 @@ Hi, My name is Syahreza Satria Alfath. A 24 Year Old Web Developer & Content Cre
 
 #### ⚒️ Tech Stacks:
 
-<div style="display:flex; gap:16px; align-items: center">
+<div style="display:flex; gap:16px; align-items: center; flex-wrap:wrap">
     <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" height="50">
     <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" height="50">
     <img src="https://cdn.worldvectorlogo.com/logos/javascript-r.svg" height="50">
-    <img src="https://cdn.worldvectorlogo.com/logos/php-4.svg" width="50" style="background: #ffffff; border-radius: 100%">
+    <img src="https://imgs.search.brave.com/bEkTo-Yx5rgPUbJxBW0z_pma_44oNigDxHyC687dOAY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8y/LzI3L1BIUC1sb2dv/LnN2Zw" width="50">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png" height="50">
     <img src="https://www.svgrepo.com/show/374118/tailwind.svg" height="50">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1280px-Laravel.svg.png?20190820171151" height="50">
     <img src="https://cdn.worldvectorlogo.com/logos/mysql-3.svg" height="50">
+    <img src="https://cdn.worldvectorlogo.com/logos/figma-icon.svg" height="50">
+    <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-lightroom-cc-icon.svg" height="50">
+    <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" height="50">
 </div>
 
 ---
@@ -34,6 +37,5 @@ Hi, My name is Syahreza Satria Alfath. A 24 Year Old Web Developer & Content Cre
   
   ![syahreza-satria's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=syahreza-satria&theme=default&show_icons=true&hide_border=true&layout=compact)
   ![syahreza-satria's Streak](https://github-readme-streak-stats.herokuapp.com/?user=syahreza-satria&theme=default&hide_border=true)
-
 
 </div>
