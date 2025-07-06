@@ -45,7 +45,7 @@ Here are some of the technologies I work with:
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png" alt="Bootstrap" width="40" height="40"/>
     <img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="Tailwind CSS" width="40" height="40"/> 
     <img src="https://cdn.worldvectorlogo.com/logos/mysql-3.svg" alt="MySQL" width="40" height="40"/> 
-    <img src="https://cdn.worldvectorlogo.com/logos/figma-icon.svg" alt="Figma" width="20" height="40"/> 
+    <img src="https://cdn.worldvectorlogo.com/logos/figma-icon.svg" alt="Figma" width="25" height="40"/> 
     <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="Photoshop" width="40" height="40"/>
 </p>
 
