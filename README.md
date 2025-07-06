@@ -41,11 +41,11 @@ Here are some of the technologies I work with:
     <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS3" width="40" height="40"/> 
     <img src="https://cdn.worldvectorlogo.com/logos/javascript-r.svg" alt="JavaScript" width="40" height="40"/> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" width="40" height="40"/> 
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg" alt="Laravel" width="40" height="40"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1280px-Laravel.svg.png?20190820171151" alt="Laravel" width="40" height="40"/>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png" alt="Bootstrap" width="40" height="40"/>
     <img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="Tailwind CSS" width="40" height="40"/> 
     <img src="https://cdn.worldvectorlogo.com/logos/mysql-3.svg" alt="MySQL" width="40" height="40"/> 
-    <img src="https://cdn.worldvectorlogo.com/logos/figma-icon.svg" alt="Figma" width="40" height="40"/> 
+    <img src="https://cdn.worldvectorlogo.com/logos/figma-icon.svg" alt="Figma" width="20" height="40"/> 
     <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="Photoshop" width="40" height="40"/>
 </p>
 
